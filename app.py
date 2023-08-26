@@ -7,7 +7,7 @@ import json
 import asyncio
 
 # Define connection string
-connectionString = "HostName=test-iot-hub-avirup171.azure-devices.net;DeviceId=edge-1;SharedAccessKey=FkJ6K1gJ1VrjnDfOgvlUZHLTWFTBHxLpn5mAPJLuKO8="
+connectionString = "<DEVICE CONN STRING>"
 
 async def sendToIotHub(data):
     try:
@@ -18,7 +18,7 @@ async def sendToIotHub(data):
         await device_client.connect()
 
         #Send the message
-        device_client.send_message(data)
+        await device_client.send_message(data)
         print("Message sent to IoT Hub:", data)
 
         # Shutdown the client
